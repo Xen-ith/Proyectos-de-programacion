@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .division{
+        background-color: rgb(191, 191, 191);
+        border-radius: 5px;
+        margin: 50px auto;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 1px 3px 5px 0px black;
+    }
+
+        .miboton{
+            font-size: xx-large; 
+            background-color: aquamarine; 
+            margin: 4%; 
+            box-shadow: 2px 2px 4px #000000; 
+            text-decoration: none;
+            font-family: monospace;
+            color: black;
+            border: 2px black;
+            border-radius: 5px;
+            align-content: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="division" style="width: 30%;">
+        <form th:action="@{/salirPag}" method="post">
+            <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">Esta seguro que desea salir?</h1>
+            <div>
+                <button type="submit" class="miboton">Confirmar</button>
+                <a href="/" class="miboton">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

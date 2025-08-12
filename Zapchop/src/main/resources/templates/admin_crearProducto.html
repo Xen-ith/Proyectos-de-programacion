@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalización de Zapatos</title>
+<style>
+body {
+    margin:0px;
+}
+
+.encabezado{
+    background: rgb(230, 254, 241); 
+    box-shadow: 2px 2px 4px #000000;
+    margin-left: 0px;
+    text-align: center;
+}
+
+.imagenbarra{
+    width: 50px;
+    height: 50px;
+    margin-top: 75px;
+    margin-bottom: 40px;
+    background-color: rgb(177, 211, 192);
+    padding: 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+    box-shadow: 2px 2px 4px #000000;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.container {
+    align-items: center; 
+    justify-content: space-around;
+    display: flex;
+}
+
+.main-shoe{
+    margin-top: 50px;
+    width: 450px;
+    height: 450px
+}
+.main-shoe img{
+    width: 450px;
+    height: auto;
+    background-color: white;
+    box-shadow: 3px 3px 5px 1px rgb(8, 74, 8);
+}
+
+.container img{
+    padding: 7%;
+    border-radius: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    width: 15%;
+    font-size: x-large;
+    font-family: monospace;
+    font-weight: bolder;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const selectModelo = document.getElementById("modeloSelect");
+    const imagenPrincipal = document.getElementById("imgPrin");
+
+    selectModelo.addEventListener("change", function () {
+        const modeloSeleccionado = selectModelo.value;
+        imagenPrincipal.src = `/imgProducto/${modeloSeleccionado}.png`;
+    });
+});
+</script>
+</head>
+<body style="background-color: rgb(200, 200, 200);">
+    <div class="encabezado">
+        <a href="/"><img src="imgMenuPrincipal/logo.jpeg" style="margin-left: 10%;"></a>
+        <div style="float: right; margin-right: 5%;">
+            <a href="/Carrito">
+                <img class="imagenbarra" src="imgMenuPrincipal/cc.png">
+            </a>
+            <a href="/Login">
+                <img class="imagenbarra" src="imgMenuPrincipal/usr.png">
+            </a>
+            <a href="/salir">
+                <img class="imagenbarra" src="imgMenuPrincipal/salir.png">
+            </a>
+        </div>
+    </div>
+ </div>
+        
+    </div>
+    <div class="container">       
+        <div class="main-shoe">
+            <img class="main-shoe" src="/imgProducto/modelo1.png" id="imgPrin">
+        </div>
+        <form th:action="@{/registrarZapato}" th:object="${calzado}" method="post">
+            <label>modelo</label>
+            <select th:field="*{modelo}" id="modeloSelect">
+                <option value="modelo1">Modelo 1</option>
+                <option value="modelo2">Modelo 2</option>
+                <option value="modelo3">Modelo 3</option>
+                <option value="modelo4">Modelo 4</option>
+                <option value="modelo5">Modelo 5</option>
+                <option value="modelo6">Modelo 6</option>
+                <option value="modelo7">Modelo 7</option>
+            </select>
+            <label>precio</label>
+                <input type="number" th:field="*{precio}" required>
+            <label>stock</label>
+                <input type="number" th:field="*{stock}" required>
+            </select>
+            <div class="buttons">
+                <button type="submit">Subir a tienda</button>
+            </div>
+        </form>
+    </div>
+     <table style="margin: auto;">
+            <tr>
+                <td>
+                    <a href="/adminMenu">REGRESAR</a>
+                </td>
+            </tr>
+        </table>
+</body>
+</html>

@@ -1,0 +1,225 @@
+
+body {
+    background-image: url("/img/l and r.png");
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;   
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-y: auto;
+    
+}
+
+.container {
+    width: 90%;
+    max-width: 450px; 
+    border-radius: 15px;
+    padding: 15px 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1), 5px 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    height: 870px;
+    position: absolute;
+    top: 3%;
+    
+}
+.recomendacion  {
+    font-family: 'Comic Sans MS', 'Arial'; 
+    color: #4333d4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+body::-webkit-scrollbar,
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.titulo {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 16px;  
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input, .input-group select {
+    width: 100%; /* Cambiado a 100% para que los inputs se ajusten al contenedor */
+    max-width: 400px; /* Mantener el ancho máximo */
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid hsla(133, 100%, 58%, 0.973);
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+    color: #333;
+    font-size: 14px;
+}
+
+
+.input-group input:focus, .input-group select:focus {
+    box-shadow: 0 0 5px rgba(33, 64, 241, 0.8);
+}
+
+#botoninicio {
+    margin: 5px 0 10px 0;
+    width: 100%; 
+    max-width: 400px; 
+    height: 45px;
+    background: linear-gradient(135deg, #4dc1f3, #4d85ec);
+    border-radius: 8px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#botoninicio:hover {
+    background: linear-gradient(135deg, #6495ed, #6ec1e4);
+}
+
+.input-group.terms {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group.terms input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+.mascot-container { 
+    position: relative;
+   
+    bottom: 90%;
+    text-align: center;
+    
+}
+
+.mascot {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+}
+
+.mascot img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+.password-meter {
+    position: relative;
+    top: 5px;
+    height: 5px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+.password-meter.weak {
+    background-color: rgba(236, 42, 42, 0.795);
+}
+
+.password-meter.medium {
+    background-color: rgba(236, 172, 51, 0.897);
+}
+
+.password-meter.strong {
+    background-color: 2px solid hsla(133, 100%, 58%, 0.973);
+ 
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #f44336; 
+    color: white;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none; 
+    transition: opacity 0.5s ease;
+}
+
+.notification.success {
+    background-color: #4CAF50; 
+}
+
+
+.contenedor-flechas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+  }
+  
+  
+  
+  .flecha {
+    font-size: 2rem;
+      color: #3498db;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: absolute;
+      bottom:  87%;
+      padding: 10px;
+      font-weight: bold;
+      display: inline-block;
+    
+  }
+  
+  .flecha-izquierda:hover {
+    color: #e74c3c;
+    transform: translateX(-10px); 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+
+  .flecha-derecha:hover {
+    color: #2ecc71;
+    transform: translateX(10px); 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .flecha:active {
+    transform: scale(1.1); 
+    text-shadow: none;
+  }
+  
+
+.flecha img {
+    width: 40px;
+    height: 40px;
+  }
+  

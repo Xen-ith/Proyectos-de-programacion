@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.encabezado{
+    background: rgb(230, 254, 241); 
+    box-shadow: 2px 2px 4px #000000;
+    margin-left: 0px;
+    text-align: center;
+}
+
+.imgTabla{
+    width: 200px;
+    height: 200px;
+}
+
+.imagenbarra{
+    width: 50px;
+    height: 50px;
+    margin-top: 75px;
+    margin-bottom: 40px;
+    background-color: rgb(177, 211, 192);
+    padding: 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+    box-shadow: 2px 2px 4px #000000;
+}
+
+.wrapper{
+  margin-left: 12.5%;
+  max-height: 300px;
+  max-width: 75%;
+  border: 1px solid #ddd;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+
+.wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.wrapper a{
+    min-width: 350px;
+    height: 280px;
+    text-align: center;
+    background-color: #ddd;
+    margin-right: 5px;
+    width: 400px;
+}
+
+.prod{
+    width: 350px;
+    height: 275px;
+}
+
+.imagenred{
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    padding: 10%;
+    margin-right: 50px;
+    border-radius: 25%;
+    box-shadow: 2px 2px 4px #000000;
+}
+
+.footer{
+    background: rgb(147, 208, 174); 
+    border-top-left-radius: 2%; 
+    border-top-right-radius: 2%; 
+    box-shadow: 2px 2px 4px #000000; 
+    display: flex;
+}
+
+.tabla{
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+    text-align: center;
+}
+
+.subtitulo{         
+    font-family:'Times New Roman', Times, serif; 
+    font-style: oblique;  
+}
+
+.subtitulo2{
+    text-align: center;         
+    font-family:'Times New Roman', Times, serif; 
+    font-style: oblique;  
+}
+
+.estilosEE{
+    background: white;
+    padding: 30px;
+}
+
+table{
+    margin: auto;
+}
+
+.tablazap, table th, table td{
+    text-align: center;
+    ;
+}
+
+.tablazap{
+    margin: auto;
+    width: 80%;
+}
+
+</style>
+</head>
+
+<body style="margin:0px">
+    <div class="encabezado">
+        <img src="imgMenuPrincipal/logo.jpeg" style="margin-left: 10%;">
+        <div style="float: right; margin-right: 5%;">
+            <a href="/Carrito">
+                <img class="imagenbarra" src="imgMenuPrincipal/cc.png">
+            </a>
+            <a href="/Login">
+                <img class="imagenbarra" src="imgMenuPrincipal/usr.png">
+            </a>
+            <a href="/salir">
+                <img class="imagenbarra" src="imgMenuPrincipal/salir.png">
+            </a>
+        </div>
+    </div>
+
+    
+    <div style="margin-bottom: 215px; ">
+        <img src="imgMenuPrincipal/zapatos.png"  style="float: left; margin-left: 7%; margin-right: 5%; width: 20%; height: 20%; border-radius: 5%; box-shadow: 2px 2px 4px #000000;">
+        <div>
+             <h1 class="subtitulo"> ¿QUIENES SOMOS? </h1>
+            <p style="font-size: xx-large; margin-top: 5%">Somos ZAPCHOP, una tienda que se encuentra localizada en cartagena <br>y nos dedicamos
+            al pintado y customizado de zapatos de distintos modelos</p>
+            <p style="font-style: italic; font-size: xx-large; font-weight: bolder;">¡Todo segun tus gustos! </p>
+        </div>
+    </div>
+
+    <div class="estilosEE">
+        <hr style=" border-top: 10px;">
+        <h1 class="subtitulo2"> ESTILOS DISPONIBLES</h1>
+        <table class="tablazap">
+        <thead>
+            <tr>
+                <th>MODELO</th>
+                <th>PRECIO</th>
+                <th>UNIDADES DISPONIBLES</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${calzados}">
+                <td><img class="imgTabla" th:src="@{'/imgProducto/' + ${item.modelo} + '.png'}" id="imgPrin"></td>
+                <td th:text="${item.precio}"></td>
+                <td th:text="${item.stock}"></td>
+                <td>
+                    <form th:action="@{/personalizar}" method="get">
+                        <input type="hidden" name="idCalzado" th:value="${item.id}">
+                        <button type="submit">Ordenar</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+
+<div class="footer">
+            <table class="tabla">
+                <th>
+                    CONTACTANOS
+                </th>
+                <tr>
+                    <td>
+                        Localizacion: Cartagena de Indias - Calle de la moneda <br>
+                        Horarios de atencion: Lunes - Viernes  [8:00 A.M - 7 P.M] <br>
+                        Telefono: 300 1234567 <br>
+                        Correo electronico: zapchop13@gmail.com
+                    </td>
+                </tr>
+            </table>
+                
+            <table class="tabla">
+                <th colspan="3">
+                    REDES SOCIALES
+                </th>
+                <tr>
+                    <td>
+                        <img class="imagenred" src="imgMenuPrincipal/red1.png" >
+                    </td>
+                    <td>
+                        <img class="imagenred" src="imgMenuPrincipal/red2.png" >
+                    </td>
+                    <td>
+                        <img class="imagenred" src="imgMenuPrincipal/red3.png" >
+                    </td>
+                </tr>
+            </table>
+</div>
+
+</body>
+</html>

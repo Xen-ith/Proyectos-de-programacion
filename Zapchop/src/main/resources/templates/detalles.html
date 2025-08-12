@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <style>
+        .tablacalzado {
+            margin: auto;
+            text-align: center;
+            width: 100%;
+            font-family: sans-serif;
+            font-size: x-large;
+            border: 1px solid gainsboro;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .datosFactura {
+            border: 1px solid gainsboro;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            font-family: sans-serif;
+            font-size: x-large;
+            padding: 20px;
+        }
+        .datotitmid, .datotit {
+            text-align: center;
+            background: gainsboro;
+            margin: 0;
+            font-weight: bold;
+        }
+        .datotit {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .texto {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="datosFactura">
+        <p class="datotit">ID factura:</p>  
+        <p class="texto" th:text="${venta.id}"></p>
+
+        <p class="datotitmid">Nombre:</p> 
+        <p class="texto" th:text="${venta.pedido.cliente.nombre}"></p>
+
+        <p class="datotitmid">Identificacion:</p> 
+        <p class="texto" th:text="${venta.pedido.cliente.identificacion}"></p>
+
+        <p class="datotitmid">Direccion:</p> 
+        <p class="texto" th:text="${venta.pedido.cliente.direccion}"></p>
+
+        <p class="datotitmid">Telefono:</p> 
+        <p class="texto" th:text="${venta.pedido.cliente.telefono}"></p>
+
+        <p class="datotitmid">Correo:</p> 
+        <p class="texto" th:text="${venta.pedido.cliente.correo}"></p>
+    </div>
+
+    <table class="tablacalzado">
+        <thead>
+            <tr class="text-dark">
+                <th>MODELO</th>
+                <th>COLOR 1</th>
+                <th>COLOR 2</th>
+                <th>CORDON</th>
+                <th>PRECIO</th>
+                <th>TALLA</th>
+                <th>DESCRIPCION</th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr>
+                <td th:text="${venta.pedido.calzado.modelo}"></td>
+                <td th:text="${venta.pedido.color1}"></td>
+                <td th:text="${venta.pedido.color2}"></td>
+                <td th:text="${venta.pedido.cordon}"></td>
+                <td th:text="${venta.pedido.calzado.precio}"></td>
+                <td th:text="${venta.pedido.talla}"></td>
+                <td th:text="${venta.pedido.descripcion}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

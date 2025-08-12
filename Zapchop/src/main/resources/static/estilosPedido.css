@@ -1,0 +1,60 @@
+.header{
+    background: rgb(230, 254, 241); 
+    box-shadow: 2px 2px 4px #000000
+}
+
+.imagenbarra{
+    width: 30px;
+    height: 30px;
+    margin-top: 75px;
+    margin-bottom: 40px;
+    background-color: rgb(177, 211, 192);
+    padding: 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+    box-shadow: 2px 2px 4px #000000
+}
+
+.subtitulo{
+    text-align: center;         
+    font-style: oblique;
+}
+
+table{
+    margin: auto;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    padding-bottom: 120px;
+    box-shadow: 2px 2px 4px #000000
+    }
+
+.espacioxd{
+    padding-bottom: 20%;
+}
+
+.titulo{
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.estado{
+    height: 50px;
+    width: 50px;
+}
+
+
+.imagen{
+    width: 100px;
+    height: 100px;
+}
+
+.info{
+    background: gainsboro;
+    padding: 10px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+}
+

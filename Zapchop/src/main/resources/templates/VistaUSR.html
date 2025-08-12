@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+     .division{
+        background-color: rgb(191, 191, 191);
+        border-radius: 5px;
+        margin: 50px auto;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 1px 3px 5px 0px black;
+    }
+        img{
+            background-color: white; 
+            padding: 5px; 
+            border-radius: 5px; 
+            width: 25%; 
+            height: 25%;
+    }
+
+a{
+    font-weight: bolder; 
+    font-style: italic; 
+    font-family: 'Lucida Sans'; 
+    background-color: slategray; 
+    color: black; 
+    margin: 20px; 
+    padding: 10px; 
+    border-radius: 50%;
+}
+    </style>
+</head>
+<body>
+    <body>
+    <div class="division">
+    <h1>Detalles del usuario</h1>
+    <img src="imgLoginRegistro/icono.png">
+    <p style="font-weight: bolder;">NOMBRE:</p>  <p th:text="${usuario.nombre}"></p>
+    <p style="font-weight: bolder;">IDENTIFICACION:</p> <p th:text="${usuario.identificacion}"></p>
+    <p style="font-weight: bolder;">DIRECCION:</p> <p th:text="${usuario.direccion}"></p>
+    <p style="font-weight: bolder;">TELEFONO:</p> <p th:text="${usuario.telefono}"></p>
+    <p style="font-weight: bolder;">CORREO:</p> <p th:text="${usuario.correo}"></p>
+
+    <a href="/">Volver</a>
+</div>
+</body>
+</html>

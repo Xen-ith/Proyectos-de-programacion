@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalización de Zapatos</title>
+<style>
+body {
+    margin:0px;
+}
+
+.encabezado{
+    background: rgb(230, 254, 241); 
+    box-shadow: 2px 2px 4px #000000;
+    margin-left: 0px;
+    text-align: center;
+}
+
+.imagenbarra{
+    width: 50px;
+    height: 50px;
+    margin-top: 75px;
+    margin-bottom: 40px;
+    background-color: rgb(177, 211, 192);
+    padding: 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+    box-shadow: 2px 2px 4px #000000;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.shoe-images {
+    display: flex;
+    flex-direction: column;
+}
+.shoe-images img {
+    width: 100px;
+    height: auto;
+    margin: 5px 0;
+    background-color: white;
+    cursor: pointer;
+}
+
+.container {
+    align-items: center;
+    background-color: rgb(200, 200, 200);
+    justify-content: space-around;
+    display: flex;
+}
+
+.main-shoe img{
+    width: 450px;
+    height: auto;
+    background-color: white;
+    box-shadow: 3px 3px 5px 1px rgb(8, 74, 8);
+}
+
+.container img{
+    padding: 7%;
+    border-radius: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    width: 15%;
+    font-size: x-large;
+    font-family: monospace;
+    font-weight: bolder;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.footer-bar {
+    width: 100vw;
+    height: 100px;
+    background-color: #8aeeb7;
+    margin-top: 50px;
+}
+</style>
+
+</head>
+<body>
+    <div class="encabezado">
+        <a href="/"><img src="imgMenuPrincipal/logo.jpeg" style="margin-left: 10%;"></a>
+        <div style="float: right; margin-right: 5%;">
+            <a href="/Carrito">
+                <img class="imagenbarra" src="imgMenuPrincipal/cc.png">
+            </a>
+            <a href="/Login">
+                <img class="imagenbarra" src="imgMenuPrincipal/usr.png">
+            </a>
+            <a href="/salir">
+                <img class="imagenbarra" src="imgMenuPrincipal/salir.png">
+            </a>
+        </div>
+    </div>
+ </div>
+        
+    </div>
+    <div class="container">       
+        <form th:action="@{/pedidoZapato}" th:object="${pedido}" method="post">
+            <input type="hidden" th:field="*{cliente.id}" />
+            <input type="hidden" th:field="*{calzado.id}" />
+            <label for="color">Color Primario:</label>
+            <select th:field="*{color1}">
+                <option value="negro">Negro</option>
+                <option value="blanco">Blanco</option>
+                <option value="rojo">Rojo</option>
+                <option value="azul">Azul</option>
+                <option value="verde">Verde</option>
+                <option value="amarillo">Amarillo</option>
+                <option value="rosa">Rosa</option>
+                <option value="gris">Gris</option>
+                <option value="marron">Marrón</option>
+            </select>
+            <label for="color-secundario">Color Secundario:</label>
+            <select th:field="*{color2}">
+                <option value="negro">Negro</option>
+                <option value="blanco">Blanco</option>
+                <option value="rojo">Rojo</option>
+                <option value="azul">Azul</option>
+                <option value="verde">Verde</option>
+                <option value="amarillo">Amarillo</option>
+                <option value="rosa">Rosa</option>
+                <option value="gris">Gris</option>
+                <option value="marron">Marrón</option>
+            </select>
+            <label for="material">Tipo de cordon:</label>
+            <select th:field="*{cordon}">
+                <option value="poliester">Poliester</option>
+                <option value="nylon">Nylon</option>
+                <option value="algodon">Algodon</option>
+                <option value="cuero">Cuero</option>
+            </select>
+            <label>descripcion</label>
+                <input type="text" th:field="*{descripcion}" required>
+            <label>talla</label>
+                <select th:field="*{talla}">
+                <option value=37>37</option>
+                <option value=38>38</option>
+                <option value=39>39</option>
+                <option value=40>40</option>
+                <option value=41>41</option>
+                <option value=42>42</option>
+                <option value=43>43</option>
+                <option value=44>44</option>
+                <option value=45>45</option>
+            </select>
+            <div class="buttons">
+                <button type="submit">Mandar al carrito</button>
+            </div>
+        </form>
+        <div class="shoe-images">
+        </div>
+    </div>
+</body>
+</html>
