@@ -1,0 +1,13 @@
+COMPRADOR: Gabriel Castillo|| CEDULA: 1007
+
+-------------------------------------------------------------------------
+
+PRODUCTO: test| PRECIO: 10000| CANTIDAD: 5
+
+PRODUCTO: Tornillos| PRECIO: 100| CANTIDAD: 35
+
+-------------------------------------------------------------------------
+
+PRECIO DE VENTA: 53500.0
+IVA: 15%
+PRECIO TOTAL:61525.0
